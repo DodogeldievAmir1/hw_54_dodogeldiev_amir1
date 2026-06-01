@@ -4,8 +4,8 @@
     <div class="bg-light">
         <div class="d-flex justify-content-center container my-5">
             <div class="card" style="max-width: 600px; width: 100%;">
-                <div class="card-body my-5">
-                    <h3 class="fs-2 fw-3">Add a new product</h3>
+                <div class="card-body my-3">
+                    <h3 class="fs-2 fw-3 text-center">Add a new product</h3>
                     <form method="post">
                         {% csrf_token %}
                         <div class="mb-3">
@@ -33,6 +33,7 @@
                             <textarea name="description_product" class="form-control" cols="20" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success w-100">Add product</button>
+                    <a href="{% url 'home_page' %}" class="btn btn-outline-secondary my-2 w-100">← Back</a>
                     </form>
                 </div>
             </div>
