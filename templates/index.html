@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="bg-light">
+        <div class="d-flex justify-content-between align-items-center container">
+            <h1 class="fs-3 fw-3 text-success">Buy goods profitably!</h1>
+            {% for product in products %}
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
+                            <div class="card-body">
+                                <h4>Product title</h4>
+                                <h4>{{ product.title }}</h4>
+                                <h4>{{ product.category }}</h4>
+                                <h4>Price: {{ product.price }}</h4>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'view_page' product.id %}" class="btn btn-info">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="alert alert-secondary my-3">The assortment is still empty</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
