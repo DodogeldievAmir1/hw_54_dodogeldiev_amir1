@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="bg-light">
-        <div class="d-flex justify-content-between align-items-center container">
+        <div class="d-flex justify-content-between align-items-center container my-5">
             <h1 class="fs-3 fw-3 text-success">Buy goods profitably!</h1>
             {% for product in products %}
                 <div class="row">
@@ -16,13 +16,19 @@
                                 <h4>Price: {{ product.price }}</h4>
                             </div>
                             <div class="card-footer text-center">
-                                <a href="{% url 'view_page' product.id %}" class="btn btn-info">Go somewhere</a>
+                                <a href="{% url 'view_page' product.id %}" class="btn btn-info">Detail</a>
                             </div>
+                        </div>
+                        <div class="col my-3">
+                            <a href="{% url 'add' %}" class="btn btn-primary">Add product</a>
                         </div>
                     </div>
                 </div>
             {% empty %}
                 <div class="alert alert-secondary my-3">The assortment is still empty</div>
+                <div class=" my-3">
+                    <a href="{% url 'add' %}" class="btn btn-primary">Add product</a>
+                </div>
             {% endfor %}
         </div>
     </div>
