@@ -30,3 +30,9 @@ def add_new_category(request):
             description=request.POST.get('description'),
         )
         return redirect('home_page')
+    return render(request, 'add_new_category.html')
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    context = {'product': product}
+    return render(request, 'product_detail.html', context)

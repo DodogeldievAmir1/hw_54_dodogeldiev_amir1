@@ -13,12 +13,17 @@
         <div class="container">
             <a class="navbar-brand" href="{% url 'home_page' %}">
                 <i class="text-primary fs-3">Shop</i>
-                by <span class ='text-primary fs-2'>Amir1</span>
+                by <span class='text-primary fs-2'>Amir1</span>
             </a>
-            <div>
-                <a href="{% url 'home_page' %}" class="nav-link text-white d-inline px-5 mx-5">Home</a>
-                <a href="{% url 'home_page' %}" class="nav-link text-white d-inline px-5 mx-5">Add product</a>
-                <a href="{% url 'home_page' %}" class="nav-link text-white d-inline px-5 mx-5">Add category</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a href="{% url 'home_page' %}" class="nav-link text-white px-3">Home</a>
+                    <a href="{% url 'add' %}" class="nav-link text-white px-3">Add product</a>
+                    <a href="{% url 'add_category' %}" class="nav-link text-white px-3">Add category</a>
+                </div>
             </div>
         </div>
     </nav>

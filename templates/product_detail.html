@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="bg-light py-5">
+        <div class="container">
+            <a href="{% url 'home_page' %}" class="btn btn-outline-secondary mb-4">← Back</a>
+            <div class="card shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="{{ product.image }}" class="img-fluid rounded-start w-100"
+                             alt="{{ product.title }}"
+                             style="max-height: 500px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div>
+                                <span class="badge bg-secondary mb-2">{{ product.category }}</span>
+                                <h2 class="card-title fw-bold">{{ product.title }}</h2>
+                                <h3 class="text-success fw-bold">{{ product.price }} сом</h3>
+                                <hr>
+                                <p class="text-muted">{{ product.description_product }}</p>
+                            </div>
+                            <div class="mt-auto">
+                                <p class="text-muted small">Added: {{ product.date|date:"d.m.Y" }}</p>
+                                <div class="d-flex gap-2">
+                                    <a href="{% url 'home_page' %}" class="btn btn-outline-secondary w-50">← Back</a>
+                                    <a href="{% url 'add' %}" class="btn btn-primary w-50">+ Add product</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
