@@ -1,138 +1,93 @@
 [
 {
-  "model": "product_shop.category",
-  "pk": 1,
+  "model": "product_shop.product",
+  "pk": 16,
   "fields": {
-    "title": "Car",
-    "description": null
+    "title": "Bumble Bee",
+    "description_product": "Autobot Transformer",
+    "price": "99999.99",
+    "category": 1,
+    "date": "2026-06-08T15:18:18.074Z",
+    "image": "https://avatars.mds.yandex.net/get-autoru-vos/10900358/d4725bde46c33bd2ec267c2b64bb881c/584x438",
+    "remains": 1
   }
 },
 {
-  "model": "product_shop.category",
-  "pk": 2,
+  "model": "product_shop.product",
+  "pk": 17,
   "fields": {
-    "title": "Aqua",
-    "description": null
+    "title": "Schweppes",
+    "description_product": "Orange",
+    "price": "120.00",
+    "category": 2,
+    "date": "2026-06-08T15:20:41.118Z",
+    "image": "https://avatars.mds.yandex.net/get-mpic/4429951/2a00000194c167c04fe6525819f506586d98/orig",
+    "remains": 100
   }
 },
 {
-  "model": "product_shop.category",
-  "pk": 3,
+  "model": "product_shop.product",
+  "pk": 18,
+  "fields": {
+    "title": "Schweppes",
+    "description_product": "Mojito",
+    "price": "120.00",
+    "category": 2,
+    "date": "2026-06-08T15:21:26.022Z",
+    "image": "https://tinytoy.kz/upload/iblock/fa8/fa8ba86fafa4b1c9f1e0564567661d44.jpeg",
+    "remains": 35
+  }
+},
+{
+  "model": "product_shop.product",
+  "pk": 19,
+  "fields": {
+    "title": "Schweppes",
+    "description_product": "Tonic",
+    "price": "120.00",
+    "category": 2,
+    "date": "2026-06-08T15:21:59.045Z",
+    "image": "https://ir.ozone.ru/s3/multimedia-8/6684940880.jpg",
+    "remains": 200
+  }
+},
+{
+  "model": "product_shop.product",
+  "pk": 20,
   "fields": {
     "title": "Ticket",
-    "description": null
-  }
-},
-{
-  "model": "product_shop.category",
-  "pk": 4,
-  "fields": {
-    "title": "Pet",
-    "description": null
-  }
-},
-{
-  "model": "product_shop.category",
-  "pk": 5,
-  "fields": {
-    "title": "Any",
-    "description": "Something"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 2,
-  "fields": {
-    "title": "Cute Dog",
-    "description_product": "A good dog, does not bite, does not bark, does not run away.",
-    "price": "16000.00",
-    "category": 4,
-    "date": "2026-06-01T11:26:41.558Z",
-    "image": "https://i.pinimg.com/736x/04/12/6c/04126cbe162b796a669c6fa57fb8f319.jpg"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 3,
-  "fields": {
-    "title": "Lamborghini Aventador",
-    "description_product": "Sport car",
-    "price": "11000000.00",
-    "category": 1,
-    "date": "2026-06-01T11:46:01.234Z",
-    "image": "https://avatars.mds.yandex.net/get-entity_search/5449393/1238854275/S600xU_2x"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 4,
-  "fields": {
-    "title": "Aqua Water",
-    "description_product": "So much tasty water.",
-    "price": "120.00",
-    "category": 2,
-    "date": "2026-06-01T11:47:51.518Z",
-    "image": "https://avatars.mds.yandex.net/i?id=11de567dda4718dbb1648549b2b201345865a8ca-5313379-images-thumbs&n=13"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 5,
-  "fields": {
-    "title": "Gold ticket",
-    "description_product": "Ticket for any concert.",
+    "description_product": "Ticket to MBAND concert",
     "price": "2500.00",
     "category": 3,
-    "date": "2026-06-01T11:49:01.061Z",
-    "image": "https://avatars.mds.yandex.net/i?id=99339c506d0fb3e6be6e6b6aee9b0752d3083c44-12753090-images-thumbs&n=13"
+    "date": "2026-06-08T15:23:07.359Z",
+    "image": "https://img.freepik.com/premium-vector/sample-ticket-entry-musical-concert-modern-elegant-ticket-card-illustration-template-vector-illustration_174639-61325.jpg?w=2000",
+    "remains": 5
   }
 },
 {
   "model": "product_shop.product",
-  "pk": 6,
+  "pk": 21,
   "fields": {
-    "title": "Ticket to train",
-    "description_product": "Ticket for Bishkek to IK",
-    "price": "1200.00",
-    "category": 3,
-    "date": "2026-06-01T11:50:20.004Z",
-    "image": "https://avatars.mds.yandex.net/i?id=49013ff2b6f2d3adbfe20a733f5ac65505a71d77-6365519-images-thumbs&n=13"
+    "title": "Dog",
+    "description_product": "Pretty dogie so cute omg",
+    "price": "99999.00",
+    "category": 4,
+    "date": "2026-06-08T15:24:12.273Z",
+    "image": "https://i.pinimg.com/736x/8d/4c/ee/8d4ceebbcae7d162c83b7f0f033f2db6.jpg",
+    "remains": 1
   }
 },
 {
   "model": "product_shop.product",
-  "pk": 7,
+  "pk": 22,
   "fields": {
-    "title": "Aqua Water",
-    "description_product": "Water",
-    "price": "120.00",
-    "category": 2,
-    "date": "2026-06-01T11:51:02.589Z",
-    "image": "https://avatars.mds.yandex.net/i?id=5783db65e056d3b28c5e31a01aefffdfad83eaa3-3986577-images-thumbs&n=13"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 8,
-  "fields": {
-    "title": "Aqua Water",
-    "description_product": "Water",
-    "price": "120.00",
-    "category": 2,
-    "date": "2026-06-01T11:51:22.083Z",
-    "image": "https://avatars.mds.yandex.net/i?id=e677cba423a74dc54442d48542decdf02ef2a4af-4449234-images-thumbs&n=13"
-  }
-},
-{
-  "model": "product_shop.product",
-  "pk": 9,
-  "fields": {
-    "title": "Pencil",
-    "description_product": "Pencil 1231231",
-    "price": "30.00",
+    "title": "Pen",
+    "description_product": "Pen, color - black",
+    "price": "50.00",
     "category": 5,
-    "date": "2026-06-01T12:04:13.647Z",
-    "image": "https://avatars.mds.yandex.net/i?id=a9f464a4ee585c895e1124db4d660f129e77f01c-5433213-images-thumbs&n=13"
+    "date": "2026-06-08T15:25:02.793Z",
+    "image": "https://avatars.mds.yandex.net/i?id=4683bc279f8391ada9b10465f8da51fc63a29d01-10071889-images-thumbs&n=13",
+    "remains": 0
   }
 }
 ]

@@ -4,6 +4,7 @@ from .views import home_page, add_new_product, add_new_category, product_detail
 
 
 urlpatterns = [
+    path('', home_page, name='home_page'),
     path('products/', home_page, name='home_page'),
     path('products/<int:pk>/', product_detail, name='detail'),
     path('products/add/', add_new_product, name='add'),
