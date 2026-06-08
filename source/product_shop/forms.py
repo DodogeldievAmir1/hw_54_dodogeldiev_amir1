@@ -4,16 +4,17 @@ from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
+    price = forms.DecimalField(max_digits=7, decimal_places=2, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    remains = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+
     class Meta:
         model = Product
         fields = ('title', 'description_product', 'price', 'category', 'image', 'remains')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description_product': forms.Textarea(attrs={'class': 'form-control'}),
-            'price': forms.NumberInput(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'image': forms.URLInput(attrs={'class': 'form-control'}),
-            'remains': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
 class CategoryForm(forms.ModelForm):
