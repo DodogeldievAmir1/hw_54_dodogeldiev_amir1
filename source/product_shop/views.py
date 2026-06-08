@@ -11,14 +11,14 @@ def home_page(request):
 
 def add_new_product(request):
     if request.method == 'POST':
-        Product.objects.create(
+        product = Product.objects.create(
             title=request.POST.get('title'),
             price=request.POST.get('price'),
             description_product=request.POST.get('description_product'),
             category_id=request.POST.get('category'),
             image=request.POST.get('image')
         )
-        return redirect('home_page')
+        return redirect('detail', pk=product.pk)
 
     categories = Category.objects.all()
     return render(request, 'create_new_pos_product.html', {'categories': categories})
