@@ -6,8 +6,9 @@ from product_shop.models import Product, Category
 
 
 def home_page(request):
-    products = Product.objects.all().order_by('-date')
-    context = {'products': products}
+    products = Product.objects.filter(remains__gte=1).order_by('category__title', 'title')
+    categories = Category.objects.order_by('title')
+    context = {'products': products, 'categories': categories}
     return render(request, 'index.html', context)
 
 def add_new_product(request):
