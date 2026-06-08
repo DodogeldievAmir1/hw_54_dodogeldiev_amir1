@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
+from product_shop.forms import ProductForm, CategoryForm
 from product_shop.models import Product, Category
 
 
@@ -10,27 +11,24 @@ def home_page(request):
     return render(request, 'index.html', context)
 
 def add_new_product(request):
-    if request.method == 'POST':
-        product = Product.objects.create(
-            title=request.POST.get('title'),
-            price=request.POST.get('price'),
-            description_product=request.POST.get('description_product'),
-            category_id=request.POST.get('category'),
-            image=request.POST.get('image')
-        )
-        return redirect('detail', pk=product.pk)
+    form = ProductForm()
 
-    categories = Category.objects.all()
-    return render(request, 'create_new_pos_product.html', {'categories': categories})
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            product = form.save()
+            return redirect('detail', pk=product.pk)
+    return render(request, 'create_new_pos_product.html', {'form': form})
 
 def add_new_category(request):
+    form = CategoryForm()
+
     if request.method == 'POST':
-        Category.objects.create(
-            title=request.POST.get('title'),
-            description=request.POST.get('description'),
-        )
-        return redirect('home_page')
-    return render(request, 'add_new_category.html')
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home_page')
+    return render(request, 'add_new_category.html', {'form': form})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
