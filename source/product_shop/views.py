@@ -19,7 +19,7 @@ def add_new_product(request):
         if form.is_valid():
             product = form.save()
             return redirect('detail', pk=product.pk)
-    return render(request, 'create_new_pos_product.html', {'form': form})
+    return render(request, 'product_form.html', {'form': form, 'title': 'Add product'})
 
 def add_new_category(request):
     form = CategoryForm()
@@ -35,3 +35,20 @@ def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     context = {'product': product}
     return render(request, 'product_detail.html', context)
+
+def update_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    form = ProductForm(instance=product)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', pk=product.pk)
+    return render(request, 'product_form.html', {'form': form})
+
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('home_page')
+    return redirect('detail', pk=pk)
