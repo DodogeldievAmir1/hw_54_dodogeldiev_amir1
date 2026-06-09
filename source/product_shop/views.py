@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from product_shop.forms import ProductForm, CategoryForm
-from product_shop.models import Product, Category
-
+from product_shop.forms import ProductForm, CategoryForm, ProductSearchForm
+from product_shop.models import Product
 
 
 def home_page(request):
+    form = ProductSearchForm(request.GET)
     products = Product.objects.filter(remains__gte=1).order_by('category__title', 'title')
-    categories = Category.objects.order_by('title')
-    context = {'products': products, 'categories': categories}
+    if form.is_valid():
+        query = form.cleaned_data.get('query')
+        if query:
+            products = products.filter(title__icontains=query)
+    context = {'products': products, 'form': form}
     return render(request, 'index.html', context)
 
 def add_new_product(request):

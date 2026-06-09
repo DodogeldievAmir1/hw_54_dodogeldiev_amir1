@@ -26,3 +26,9 @@ class CategoryForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
+class ProductSearchForm(forms.Form):
+    query = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search...'})
+    )
+
